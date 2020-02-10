@@ -95,3 +95,24 @@ what_mark(else) :-
 The above is like a switch statement.
 
 `whatmark(70).` Will output "First"
+
+
+## Recursion
+
+Simple function to check if 2 people are related to each other
+
+```
+related(X,Y) :-
+	parent(X,Y).
+```
+
+2 people can be related if one is a parent of another
+
+```
+related(X,Y) :-
+	parent(X,Y),
+	related(Z,Y).
+```
+
+To also handle grandparents we can use recursion.
+

@@ -47,3 +47,10 @@ what_mark(50) :-
 
 what_mark(else) :-
 	write('Don\'t bother').
+
+related(X,Y) :-
+	parent(X,Y).
+
+related(X,Y) :-
+	parent(X,Z),
+	related(Z,Y).
