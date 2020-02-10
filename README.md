@@ -1,0 +1,2 @@
+# learnProlog
+I learn prolog
