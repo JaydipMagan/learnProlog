@@ -14,7 +14,7 @@ We store facts and rules we define in a file with extension .pl
 
 `listing(predicate-name)` to show all predicates with the specified name
 
-
+`tty_clear.` will clear the terminal
 ## Hello world!
 
 `write('hello world'), nl.` output hello world to the screen with a new line(nl)
@@ -47,10 +47,51 @@ dances(alice) :-
 This rule will combine 2 facts, alice will dance if she is happy and with albert.
 ## Using variables
 
-Variables are always CAPITAL letters
+Variables are always CAPITAL letters or start with `_`
 
 `loves(romeo,X).` This will find out who juliet loves
 
 `X = juliet` Output
 
 `male(X),female(Y).` This will output all the combinations of male and female. You can cycle through using `;` and stop using `.` 
+
+
+## Complex questions/queries
+
+`parent(X,a),dances(X).` Find out the parent of a who also dances
+
+`X = Alice` Should be the output
+
+How do we find out the grandchildren of someone?
+
+```
+get_grandchild_albert :- 
+	parent(albert,X),
+	parent(X,Y),
+	write('alberts grandchild is '),
+	write(Y),nl.
+```
+
+`alberts grandchild is c` Should be the output
+
+## If statements?
+
+Prolog doesn't have conditional statements except `:-` so we have to rely on redefining predicates.
+
+```
+what_mark(70) :-
+	write('First').
+
+what_mark(60) :-
+	write('2:1').
+
+what_mark(50) :-
+	write('2:2').
+
+what_mark(else) :-
+	write('Don\'t bother').
+```
+
+The above is like a switch statement.
+
+`whatmark(70).` Will output "First"
