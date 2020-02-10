@@ -49,7 +49,7 @@ This rule will combine 2 facts, alice will dance if she is happy and with albert
 
 Variables are always CAPITAL letters or start with `_`
 
-`loves(romeo,X).` This will find out who juliet loves
+`loves(romeo,X).` This will find out who romeo loves
 
 `X = juliet` Output
 
