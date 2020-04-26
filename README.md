@@ -15,6 +15,8 @@ We store facts and rules we define in a file with extension .pl
 `listing(predicate-name)` to show all predicates with the specified name
 
 `tty_clear.` will clear the terminal
+
+`run_tests.` will run the tests that are in the database
 ## Hello world!
 
 `write('hello world'), nl.` output hello world to the screen with a new line(nl)
@@ -144,4 +146,4 @@ test(test2,[fail]) :-
 test1 will check if the list returned is [70]. 
 test2 will check if the predicate failed as expected.
 
-
+To run the tests use the command `run_tests.`
