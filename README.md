@@ -116,3 +116,32 @@ related(X,Y) :-
 
 To also handle grandparents we can use recursion.
 
+## Unit testing
+
+Unit testing can be done by using the plunit package.
+
+Unit tests must be within the following lines`:- begin_tests(name_of_test_group).` and `:- end_tests(name_of_test_group).`.
+
+A unit test will have a name and a list of properties of that test.
+```test(testname,[properties...]).```
+
+Suppose you wanted to test the following predicate:
+```
+marklist(70,X):-
+	X = [70].
+marklist(60,X):-
+	X = [60].
+```
+The unit tests should look like :
+```
+:- begin_tests(marklisttest).
+test(test1,[true(X=[70])]) :-
+	marklist(70,X).
+test(test2,[fail]) :-
+	marklist([],X).
+:- end_tests(marklisttest).
+```
+test1 will check if the list returned is [70]. 
+test2 will check if the predicate failed as expected.
+
+
